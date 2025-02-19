@@ -1,0 +1,52 @@
+# Log started 2024-07-02 16:04
+# Record of session commands.  Please note that this will
+# likely require editing if it is to be run as a script.
+open "C:\Users\vasav\Desktop\Internship files\Expenditure.xls.gdt"
+Hamil_percent_dev = hamil_log_GFCE/hpt_log_GFCE*100
+gnuplot Hamil_percent_dev --time-series --with-lines
+hamil_percendev_GDPtotal = hamil_log_GDP/hpt_log_GDPTotal*100
+rename 43 Hamil_percentdev_GFCE
+gnuplot  Hamil_percentdev_GFCE hamil_percendev_GDPtotal --time-series \
+  --with-lines
+hamil_percentdev_GFCF = hamil_log_GFCF/hpt_log_GFCF*100
+gnuplot  hamil_percendev_GDPtotal hamil_percentdev_GFCF --time-series \
+  --with-lines
+hamil_percentdev_Exports = hamil_log_exports/hpt_log_Exports*100
+gnuplot  hamil_percentdev_Exports hamil_percendev_GDPtotal --time-series \
+  --with-lines
+hamil_percentdev_PFCE = hamil_log_PFCE/hpt_log_PFCE*100
+gnuplot  hamil_percentdev_PFCE hamil_percendev_GDPtotal --time-series \
+  --with-lines
+hamil_percentdev_imports = hamil_log_Imports/hpt_log_Imports*100
+gnuplot  hamil_percentdev_imports hamil_percendev_GDPtotal --time-series \
+  --with-lines
+gnuplot  hamil_percendev_GDPtotal Hamil_percentdev_GFCE --time-series \
+  --with-lines
+gnuplot  hamil_percentdev_GFCF hamil_percendev_GDPtotal --time-series \
+  --with-lines
+gnuplot  hamil_percentdev_Exports hamil_percendev_GDPtotal --time-series \
+  --with-lines
+gnuplot  hamil_percentdev_PFCE hamil_percendev_GDPtotal --time-series \
+  --with-lines
+gnuplot  hamil_percentdev_imports hamil_percendev_GDPtotal --time-series \
+  --with-lines
+# store "C:\Users\vasav\Desktop\Internship files\Expenditure.xls.gdt"
+bk_percentdev_GDPtotal = bk_log_GDPTotal/hpt_log_GDPTotal*100
+gnuplot bk_percentdev_GDPtotal --time-series --with-lines
+bk_percentdev_GFCE = bk_log_GFCE/hpt_log_GFCE*100
+gnuplot  bk_percentdev_GFCE bk_percentdev_GDPtotal --time-series \
+  --with-lines
+# store "C:\Users\vasav\Desktop\Internship files\Expenditure.xls.gdt"
+bk_percentdev_GFCF = bk_log_GFCF/hpt_log_GFCF*100
+bk_percentdev_PFCE = bk_log_PFCE/hpt_log_PFCE*100
+bk_percentdev_exports = bk_log_Exports/hpt_log_Exports*100
+bk_percentdev_imports = bk_log_Imports/hpt_log_Imports*100
+gnuplot  bk_percentdev_GFCF bk_percentdev_GDPtotal --time-series \
+  --with-lines
+gnuplot  bk_percentdev_exports bk_percentdev_GDPtotal --time-series \
+  --with-lines
+gnuplot  bk_percentdev_PFCE bk_percentdev_GDPtotal --time-series \
+  --with-lines
+gnuplot  bk_percentdev_imports bk_percentdev_GDPtotal --time-series \
+  --with-lines
+# store "C:\Users\vasav\Desktop\Internship files\Expenditure.xls.gdt"
